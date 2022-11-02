@@ -33,7 +33,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install /skywalking-client-js && \
+RUN npm --registry=https://registry.npmmirror.com ; \
+    npm install /skywalking-client-js && \
     npm install && \
     npm run build
 

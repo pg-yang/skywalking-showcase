@@ -22,7 +22,7 @@ WORKDIR /app
 COPY main.go main.go
 COPY go.mod go.mod
 COPY go.sum go.sum
-RUN go build -v -o bin/main main.go
+RUN go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct && go build -v -o bin/main main.go
 
 FROM alpine:3.14
 

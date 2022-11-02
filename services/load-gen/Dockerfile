@@ -23,6 +23,6 @@ COPY requirements.txt requirements.txt
 COPY loadgen.py loadgen.py
 
 RUN sudo apt-get update && sudo apt-get install -y python3-pip
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 CMD python3 loadgen.py

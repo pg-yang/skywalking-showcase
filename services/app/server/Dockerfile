@@ -33,6 +33,7 @@ WORKDIR /app
 COPY . .
 
 RUN \
+    npm --registry=https://registry.npmmirror.com ;\
     npm install /skywalking-backend-js ; \
     npm install
 
