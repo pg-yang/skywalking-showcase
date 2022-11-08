@@ -27,9 +27,11 @@ docker: docker.build
 
 docker.build:
 	docker build \
+		--platform linux/amd64 \
 		--build-arg SW_AGENT_NODEJS_BACKEND_VERSION=${SW_AGENT_NODEJS_BACKEND_VERSION} \
 		. -t $(HUB)/app:$(TAG)
 	docker build \
+		--platform linux/amd64 \
 		. -t $(HUB)/app:$(TAG)-agentless -f Dockerfile.agentless
 
 docker.push: docker.build
